@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:show_bazzar/Screens/product_detail_screen.dart';
@@ -32,38 +33,47 @@ class BrandScreen extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.black),
       ),
       floatingActionButton:  Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          FloatingActionButton.extended(
-            onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                builder: (BuildContext context) {
-                  return FilterBottomSheet();
-                },
-              );
-            },
-            label: Text(
-              'Filter',
-              style: TextStyle(fontSize: 20),
-            ),
-            icon: Icon(
-              Icons.filter_alt_outlined,
-              size: 30,
+          SizedBox(
+            height: 40,
+            width: 90,
+            child: FloatingActionButton.extended(
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return FilterBottomSheet();
+                  },
+                );
+              },
+              label: Text(
+                'Filter',
+                style: TextStyle(fontSize: 15),
+              ),
+              icon: Icon(
+                Icons.filter_alt_outlined,
+                size: 20,
+              ),
             ),
           ),
           SizedBox(width: 16), // Add some space between the buttons
-          FloatingActionButton.extended(
-            onPressed: () {
-              // Add onPressed action for the second floating action button
-            },
-            label: Text(
-              'Sort',
-              style: TextStyle(fontSize: 20),
-            ),
-            icon: Icon(
-              Icons.sort_outlined,
-              size: 30,
+          SizedBox(
+            height: 40,
+            width: 90,
+            child: FloatingActionButton.extended(
+              onPressed: () {
+                // Add onPressed action for the second floating action button
+              },
+              label: Text(
+                'Sort',
+                style: TextStyle(fontSize: 15),
+              ),
+              icon: Icon(
+                Icons.sort_outlined,
+                size: 20,
+              ),
             ),
           ),
         ],

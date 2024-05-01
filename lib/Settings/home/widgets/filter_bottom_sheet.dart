@@ -179,6 +179,14 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                         ),
                       ),
                     ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(onPressed: (){Navigator.of(context).pop();}, child: Text('Cancel')),
+                      SizedBox(width: 100,),
+                      ElevatedButton(onPressed: (){}, child: Text('Apply'),),
+                    ],
                   )
                 ],
               ),

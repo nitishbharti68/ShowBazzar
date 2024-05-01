@@ -9,7 +9,11 @@ import 'package:show_bazzar/features/shop/screen/home/widgets/promo_slider.dart'
 import 'package:show_bazzar/paymentProcess/cart_page.dart';
 
 import '../Settings/home/widgets/filter_bottom_sheet.dart';
+import '../Stream/stream_components/profile_tile.dart';
 import '../Stream/stream_components/stream_colors.dart';
+import '../Stream/streammodels/profile.dart';
+import '../Widgets/store.dart';
+import '../Widgets/store_tile.dart';
 import '../core/utils/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -169,7 +173,17 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              const TTopStoresSlide(),
+              // const TTopStoresSlide(),
+              SizedBox(
+                height: 100,
+                child: ListView.builder(
+                    itemCount: profiless.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, int index) {
+                      Store store = profiless[index];
+                      return StoreTile(store: store, );
+                    }),
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(

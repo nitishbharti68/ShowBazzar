@@ -7,6 +7,7 @@ import 'package:show_bazzar/Widgets/Common%20Widgets/appbar.dart';
 import 'package:show_bazzar/Widgets/Common%20Widgets/circular_icon.dart';
 import 'package:show_bazzar/Widgets/Common%20Widgets/section_heading.dart';
 import 'package:show_bazzar/Widgets/Common%20Widgets/trounded_image.dart';
+import 'package:show_bazzar/Widgets/detail_product_image_slider.dart';
 import 'package:show_bazzar/Widgets/main_drawer.dart';
 import 'package:show_bazzar/core/utils/constants/colors.dart';
 import 'package:show_bazzar/core/utils/constants/image_strings.dart';
@@ -48,7 +49,7 @@ class ProductDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const TProductImageSlider(),
+            const TDetailProductImageSlider(),
             Padding(
               padding: const EdgeInsets.only(
                   right: TSizes.defaultSpace,

@@ -7,19 +7,17 @@ import 'package:show_bazzar/features/shop/controllers/home_controller.dart';
 
 import '../../../../../Widgets/Common Widgets/trounded_image.dart';
 
-class TPromoSlider extends StatelessWidget {
-  const TPromoSlider({
+class TDetailPromoSlider extends StatelessWidget {
+  const TDetailPromoSlider({
     super.key,
     required this.banners,
     required this.width,
-    required this.height,  required this.liveText,  required this.viewText,  required this.logoImage,
+    required this.height,
   });
 
   final List<String> banners;
   final double width, height;
-  final String liveText;
-  final String viewText;
-  final String logoImage;
+
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +31,14 @@ class TPromoSlider extends StatelessWidget {
         ),
         items: banners
             .map((url) => TRoundedImage(
-                  imageUrl: url,
-                  width: width,
-                  height: height, borderRadius: 24,
-                ))
+          imageUrl: url,
+          width: width,
+          height: height, borderRadius: 24,
+        ))
             .toList(),
       ),
 
-      /*Obx(
+     Obx(
         () => Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -56,34 +54,34 @@ class TPromoSlider extends StatelessWidget {
               ),
           ],
         ),
-      )*/
-
-      Container(
-        width: 380,
-        height: 70,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.black.withOpacity(0.5)),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Row(
-              children: [
-                ClipRRect(
-                  child: TRoundedImage(width: 50, imageUrl: 'images/nike.jpg', borderRadius: 18,)
-                ),
-              ],
-            ),
-             const SizedBox(width: TSizes.spaceBtwItems/2,),
-             Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(liveText, style: const TextStyle(color: Colors.white),),
-                Text(viewText, style: const TextStyle(color: Colors.white),),
-              ],
-            )
-          ],
-        ),
       )
+
+      // Container(
+      //   width: 380,
+      //   height: 70,
+      //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.black.withOpacity(0.5)),
+      //   child: Row(
+      //     crossAxisAlignment: CrossAxisAlignment.center,
+      //     children: [
+      //       const Row(
+      //         children: [
+      //           ClipRRect(
+      //               child: TRoundedImage(width: 50, imageUrl: 'images/nike.jpg', borderRadius: 18,)
+      //           ),
+      //         ],
+      //       ),
+      //       const SizedBox(width: TSizes.spaceBtwItems/2,),
+      //       Column(
+      //         mainAxisAlignment: MainAxisAlignment.center,
+      //         crossAxisAlignment: CrossAxisAlignment.start,
+      //         children: [
+      //           Text(liveText, style: const TextStyle(color: Colors.white),),
+      //           Text(viewText, style: const TextStyle(color: Colors.white),),
+      //         ],
+      //       )
+      //     ],
+      //   ),
+      // )
     ]);
   }
 }
